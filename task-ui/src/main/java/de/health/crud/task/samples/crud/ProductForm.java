@@ -50,9 +50,7 @@ public class ProductForm extends ProductFormDesign {
 
         // perform validation and enable/disable buttons while editing
         ValueChangeListener valueListener = new ValueChangeListener() {
-            /**
-			 * 
-			 */
+
 			private static final long serialVersionUID = 1L;
 
 			@Override
@@ -85,9 +83,7 @@ public class ProductForm extends ProductFormDesign {
         });
 
         save.addClickListener(new ClickListener() {
-            /**
-			 * 
-			 */
+
 			private static final long serialVersionUID = 1L;
 
 			@Override
