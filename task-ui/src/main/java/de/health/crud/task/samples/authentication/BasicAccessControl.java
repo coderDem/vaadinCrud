@@ -7,7 +7,9 @@ package de.health.crud.task.samples.authentication;
  */
 public class BasicAccessControl implements AccessControl {
 
-    @Override
+	private static final long serialVersionUID = 1L;
+
+	@Override
     public boolean signIn(String username, String password) {
         if (username == null || username.isEmpty())
             return false;

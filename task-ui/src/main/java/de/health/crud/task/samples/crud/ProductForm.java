@@ -30,7 +30,8 @@ import com.vaadin.ui.Notification.Type;
  */
 public class ProductForm extends ProductFormDesign {
 
-    private SampleCrudLogic viewLogic;
+	private static final long serialVersionUID = 1L;
+	private SampleCrudLogic viewLogic;
     private BeanFieldGroup<Product> fieldGroup;
 
     public ProductForm(SampleCrudLogic sampleCrudLogic) {
@@ -49,7 +50,12 @@ public class ProductForm extends ProductFormDesign {
 
         // perform validation and enable/disable buttons while editing
         ValueChangeListener valueListener = new ValueChangeListener() {
-            @Override
+            /**
+			 * 
+			 */
+			private static final long serialVersionUID = 1L;
+
+			@Override
             public void valueChange(ValueChangeEvent event) {
                 formHasChanged();
             }
@@ -60,7 +66,12 @@ public class ProductForm extends ProductFormDesign {
 
         fieldGroup.addCommitHandler(new CommitHandler() {
 
-            @Override
+            /**
+			 * 
+			 */
+			private static final long serialVersionUID = 1L;
+
+			@Override
             public void preCommit(CommitEvent commitEvent)
                     throws CommitException {
             }
@@ -74,7 +85,12 @@ public class ProductForm extends ProductFormDesign {
         });
 
         save.addClickListener(new ClickListener() {
-            @Override
+            /**
+			 * 
+			 */
+			private static final long serialVersionUID = 1L;
+
+			@Override
             public void buttonClick(ClickEvent event) {
                 try {
                     fieldGroup.commit();
@@ -92,14 +108,20 @@ public class ProductForm extends ProductFormDesign {
         });
 
         cancel.addClickListener(new ClickListener() {
-            @Override
+
+			private static final long serialVersionUID = 1L;
+
+			@Override
             public void buttonClick(ClickEvent event) {
                 viewLogic.cancelProduct();
             }
         });
 
         delete.addClickListener(new ClickListener() {
-            @Override
+
+			private static final long serialVersionUID = 1L;
+
+			@Override
             public void buttonClick(ClickEvent event) {
                 Product product = fieldGroup.getItemDataSource().getBean();
                 viewLogic.deleteProduct(product);

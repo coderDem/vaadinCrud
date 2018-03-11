@@ -16,7 +16,9 @@ import com.vaadin.ui.HorizontalLayout;
  * 
  */
 public class MainScreen extends HorizontalLayout {
-    private Menu menu;
+
+	private static final long serialVersionUID = 1L;
+	private Menu menu;
 
     public MainScreen(MyUI ui) {
 
@@ -46,7 +48,9 @@ public class MainScreen extends HorizontalLayout {
     // is currently active
     ViewChangeListener viewChangeListener = new ViewChangeListener() {
 
-        @Override
+		private static final long serialVersionUID = 1L;
+
+		@Override
         public boolean beforeViewChange(ViewChangeEvent event) {
             return true;
         }

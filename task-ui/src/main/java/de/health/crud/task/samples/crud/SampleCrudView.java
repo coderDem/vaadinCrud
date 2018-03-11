@@ -33,8 +33,9 @@ import com.vaadin.ui.themes.ValoTheme;
  */
 public class SampleCrudView extends CssLayout implements View {
 
-    public static final String VIEW_NAME = "Inventory";
-    private ProductGrid grid;
+	public static final String VIEW_NAME = "Inventory";
+	private static final long serialVersionUID = 1L;
+	private ProductGrid grid;
     private ProductForm form;
 
     private SampleCrudLogic viewLogic = new SampleCrudLogic(this);
@@ -48,7 +49,9 @@ public class SampleCrudView extends CssLayout implements View {
         grid = new ProductGrid();
         grid.addSelectionListener(new SelectionListener() {
 
-            @Override
+			private static final long serialVersionUID = 1L;
+
+			@Override
             public void select(SelectionEvent event) {
                 viewLogic.rowSelected(grid.getSelectedRow());
             }
@@ -79,7 +82,10 @@ public class SampleCrudView extends CssLayout implements View {
         ResetButtonForTextField.extend(filter);
         filter.setImmediate(true);
         filter.addTextChangeListener(new FieldEvents.TextChangeListener() {
-            @Override
+
+			private static final long serialVersionUID = 1L;
+
+			@Override
             public void textChange(FieldEvents.TextChangeEvent event) {
                 grid.setFilter(event.getText());
             }
@@ -89,7 +95,10 @@ public class SampleCrudView extends CssLayout implements View {
         newProduct.addStyleName(ValoTheme.BUTTON_PRIMARY);
         newProduct.setIcon(FontAwesome.PLUS_CIRCLE);
         newProduct.addClickListener(new ClickListener() {
-            @Override
+
+			private static final long serialVersionUID = 1L;
+
+			@Override
             public void buttonClick(ClickEvent event) {
                 viewLogic.newProduct();
             }

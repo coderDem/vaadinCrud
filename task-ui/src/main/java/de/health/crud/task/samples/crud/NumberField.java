@@ -14,7 +14,10 @@ import com.vaadin.ui.TextField;
  * instead of the normal one.
  */
 public class NumberField extends TextField {
-    public NumberField() {
+
+	private static final long serialVersionUID = 1L;
+
+	public NumberField() {
         // Mark the field as numeric.
         // This affects the virtual keyboard shown on mobile devices.
         AttributeExtension ae = new AttributeExtension();

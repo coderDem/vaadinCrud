@@ -12,7 +12,9 @@ import com.vaadin.data.util.converter.Converter;
 public class CollectionToStringConverter implements
         Converter<String, Collection> {
 
-    @Override
+	private static final long serialVersionUID = 1L;
+
+	@Override
     public Collection convertToModel(String value,
             Class<? extends Collection> targetType, Locale locale)
             throws com.vaadin.data.util.converter.Converter.ConversionException {

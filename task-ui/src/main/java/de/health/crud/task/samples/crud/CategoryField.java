@@ -20,7 +20,8 @@ import com.vaadin.ui.VerticalLayout;
  */
 public class CategoryField extends CustomField<Set<Category>> {
 
-    private VerticalLayout options;
+	private static final long serialVersionUID = 1L;
+	private VerticalLayout options;
     private Map<Category, CheckBox> checkboxes = new HashMap<Category, CheckBox>();
     private boolean updatingField = false;
 
@@ -53,7 +54,9 @@ public class CategoryField extends CustomField<Set<Category>> {
             checkboxes.put(category, box);
             box.addValueChangeListener(new ValueChangeListener() {
 
-                @Override
+				private static final long serialVersionUID = 1L;
+
+				@Override
                 public void valueChange(
                         com.vaadin.data.Property.ValueChangeEvent event) {
                     if (!updatingField) {
@@ -77,7 +80,8 @@ public class CategoryField extends CustomField<Set<Category>> {
         }
     }
 
-    @Override
+    @SuppressWarnings("unchecked")
+	@Override
     public Class getType() {
         return Set.class;
     }

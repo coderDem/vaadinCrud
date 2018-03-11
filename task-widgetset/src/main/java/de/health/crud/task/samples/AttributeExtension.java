@@ -10,7 +10,9 @@ import com.vaadin.ui.TextField;
 @JavaScript("attribute_extension_connector.js")
 public class AttributeExtension extends AbstractJavaScriptExtension {
 
-    public void extend(TextField target) {
+	private static final long serialVersionUID = 1L;
+
+	public void extend(TextField target) {
         super.extend(target);
     }
 

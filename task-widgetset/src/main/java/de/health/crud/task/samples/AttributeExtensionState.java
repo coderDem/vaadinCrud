@@ -9,5 +9,6 @@ import java.util.HashMap;
  * to client.
  */
 public class AttributeExtensionState extends JavaScriptExtensionState {
-    public HashMap<String, String> attributes = new HashMap<String, String>();
+	private static final long serialVersionUID = 1L;
+	public HashMap<String, String> attributes = new HashMap<String, String>();
 }
