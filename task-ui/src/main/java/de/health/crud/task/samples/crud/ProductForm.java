@@ -38,7 +38,7 @@ public class ProductForm extends ProductFormDesign {
         addStyleName("product-form");
         viewLogic = sampleCrudLogic;
 
-        price.setConverter(new EuroConverter());
+        price.setConverter(new DollarConverter());
 
         for (Availability s : Availability.values()) {
             availability.addItem(s);

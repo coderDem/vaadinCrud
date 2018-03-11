@@ -3,6 +3,8 @@ package de.health.crud.task.samples.crud;
 import java.util.Collection;
 import java.util.Locale;
 
+import org.eclipse.jdt.annotation.Nullable;
+
 import de.health.crud.task.samples.backend.data.Availability;
 import de.health.crud.task.samples.backend.data.Product;
 
@@ -25,7 +27,9 @@ import com.vaadin.ui.renderers.HtmlRenderer;
  */
 public class ProductGrid extends Grid {
 
-    private StringToEnumConverter availabilityConverter = new StringToEnumConverter() {
+	private static final long serialVersionUID = 1L;
+	
+	private StringToEnumConverter availabilityConverter = new StringToEnumConverter() {
         @Override
         public String convertToPresentation(Enum availability,
                 java.lang.Class<? extends String> targetType, Locale locale)
@@ -81,8 +85,8 @@ public class ProductGrid extends Grid {
         getColumn("availability").setConverter(availabilityConverter)
                 .setRenderer(new HtmlRenderer());
 
-        // Add " €" automatically after price
-        getColumn("price").setConverter(new EuroConverter());
+        // Add " $" automatically after price
+        getColumn("price").setConverter(new DollarConverter());
 
         // Show categories as a comma separated list
         getColumn("category").setConverter(new CollectionToStringConverter());
@@ -90,7 +94,10 @@ public class ProductGrid extends Grid {
         // Align columns using a style generator and theme rule until #15438
         setCellStyleGenerator(new CellStyleGenerator() {
 
-            @Override
+			private static final long serialVersionUID = 1L;
+
+			@Nullable
+			@Override
             public String getStyle(CellReference cellReference) {
                 if (cellReference.getPropertyId().equals("price")
                         || cellReference.getPropertyId().equals("stockCount")) {
