@@ -1,0 +1,15 @@
+*.class
+*.iml
+*.jar
+*.log
+*.swp
+*.war
+*~
+.DS_Store
+.checkstyle
+.classpath
+.project
+
+.settings/
+.vagrant/
+target/
