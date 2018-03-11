@@ -11,8 +11,10 @@ import de.health.crud.task.samples.backend.mock.MockDataService;
  * Back-end service interface for retrieving and updating product data.
  */
 public abstract class DataService implements Serializable {
+	
+	private static final long serialVersionUID = 1L;
 
-    public abstract Collection<Product> getAllProducts();
+	public abstract Collection<Product> getAllProducts();
 
     public abstract Collection<Category> getAllCategories();
 
