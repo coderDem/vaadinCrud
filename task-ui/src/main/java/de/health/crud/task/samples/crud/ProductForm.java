@@ -6,6 +6,7 @@ import de.health.crud.task.samples.backend.DataService;
 import de.health.crud.task.samples.backend.data.Availability;
 import de.health.crud.task.samples.backend.data.Category;
 import de.health.crud.task.samples.backend.data.Product;
+import de.health.crud.task.samples.backend.data.Release;
 
 import com.vaadin.data.Property.ValueChangeEvent;
 import com.vaadin.data.Property.ValueChangeListener;
@@ -40,7 +41,13 @@ public class ProductForm extends ProductFormDesign {
         viewLogic = sampleCrudLogic;
 
         price.setConverter(new DollarConverter());
-
+        
+        release.setConvertedValue(new ReleaseConverter());
+        
+        for (Release s : Release.values()) {
+        	release.addItem(s);
+        }
+        
         for (Availability s : Availability.values()) {
             availability.addItem(s);
         }
@@ -64,9 +71,6 @@ public class ProductForm extends ProductFormDesign {
 
         fieldGroup.addCommitHandler(new CommitHandler() {
 
-            /**
-			 * 
-			 */
 			private static final long serialVersionUID = 1L;
 
 			@Override
@@ -89,8 +93,8 @@ public class ProductForm extends ProductFormDesign {
 			@Override
             public void buttonClick(ClickEvent event) {
                 try {
-                    fieldGroup.commit();
-
+                	fieldGroup.commit();
+                    
                     // only if validation succeeds
                     Product product = fieldGroup.getItemDataSource().getBean();
                     viewLogic.saveProduct(product);

@@ -3,8 +3,6 @@ package de.health.crud.task.samples.crud;
 import java.util.Collection;
 import java.util.Locale;
 
-import org.eclipse.jdt.annotation.Nullable;
-
 import de.health.crud.task.samples.backend.data.Availability;
 import de.health.crud.task.samples.backend.data.Product;
 
@@ -65,7 +63,7 @@ public class ProductGrid extends Grid {
 
 		BeanItemContainer<Product> container = new BeanItemContainer<Product>(Product.class);
 		setContainerDataSource(container);
-		setColumnOrder("id", "productName", "price", "availability", "stockCount", "category");
+		setColumnOrder("id", "productName", "price", "availability", "stockCount", "release", "category");
 
 		// Show empty stock as "-"
 		getColumn("stockCount").setConverter(new StringToIntegerConverter() {
@@ -85,7 +83,7 @@ public class ProductGrid extends Grid {
 
 		// Add " $" automatically after price
 		getColumn("price").setConverter(new DollarConverter());
-
+		
 		// Show categories as a comma separated list
 		getColumn("category").setConverter(new CollectionToStringConverter());
 
@@ -94,7 +92,6 @@ public class ProductGrid extends Grid {
 
 			private static final long serialVersionUID = 1L;
 
-			@Nullable
 			@Override
 			public String getStyle(CellReference cellReference) {
 				if (cellReference.getPropertyId().equals("price")

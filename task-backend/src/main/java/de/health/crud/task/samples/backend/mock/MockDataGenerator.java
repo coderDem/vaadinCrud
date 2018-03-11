@@ -10,6 +10,7 @@ import java.util.Set;
 import de.health.crud.task.samples.backend.data.Availability;
 import de.health.crud.task.samples.backend.data.Category;
 import de.health.crud.task.samples.backend.data.Product;
+import de.health.crud.task.samples.backend.data.Release;
 
 public class MockDataGenerator {
     private static int nextCategoryId = 1;
@@ -75,6 +76,9 @@ public class MockDataGenerator {
         if (p.getAvailability() == Availability.AVAILABLE) {
             p.setStockCount(random.nextInt(523));
         }
+        
+        p.setRelease(Release.values()[random.nextInt(Release
+                .values().length)]);
 
         p.setCategory(getCategory(categories, 1, 2));
         return p;

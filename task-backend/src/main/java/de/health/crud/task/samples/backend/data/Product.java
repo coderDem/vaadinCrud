@@ -24,6 +24,7 @@ public class Product implements Serializable {
     private int stockCount = 0;
     @NotNull
     private Availability availability = Availability.COMING;
+    private Release release;
 
     public int getId() {
         return id;
@@ -72,5 +73,13 @@ public class Product implements Serializable {
     public void setAvailability(Availability availability) {
         this.availability = availability;
     }
+
+	public Release getRelease() {
+		return release;
+	}
+
+	public void setRelease(Release release) {
+		this.release = release;
+	}
 
 }
