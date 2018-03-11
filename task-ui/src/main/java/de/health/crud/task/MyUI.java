@@ -31,7 +31,8 @@ import com.vaadin.ui.themes.ValoTheme;
 @Widgetset("de.health.crud.task.MyAppWidgetset")
 public class MyUI extends UI {
 
-    private AccessControl accessControl = new BasicAccessControl();
+	private static final long serialVersionUID = 1L;
+	private AccessControl accessControl = new BasicAccessControl();
 
     @Override
     protected void init(VaadinRequest vaadinRequest) {
@@ -40,7 +41,9 @@ public class MyUI extends UI {
         getPage().setTitle("My");
         if (!accessControl.isUserSignedIn()) {
             setContent(new LoginScreen(accessControl, new LoginListener() {
-                @Override
+				private static final long serialVersionUID = 1L;
+
+				@Override
                 public void loginSuccessful() {
                     showMainView();
                 }
@@ -67,5 +70,6 @@ public class MyUI extends UI {
     @WebServlet(urlPatterns = "/*", name = "MyUIServlet", asyncSupported = true)
     @VaadinServletConfiguration(ui = MyUI.class, productionMode = false)
     public static class MyUIServlet extends VaadinServlet {
+		private static final long serialVersionUID = 1L;
     }
 }

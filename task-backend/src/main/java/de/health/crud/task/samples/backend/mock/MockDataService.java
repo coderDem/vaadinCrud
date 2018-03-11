@@ -12,7 +12,9 @@ import de.health.crud.task.samples.backend.data.Product;
  */
 public class MockDataService extends DataService {
 
-    private static MockDataService INSTANCE;
+	private static final long serialVersionUID = 1L;
+
+	private static MockDataService INSTANCE;
 
     private List<Product> products;
     private List<Category> categories;

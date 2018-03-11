@@ -25,8 +25,10 @@ import de.health.crud.task.samples.ResetButtonForTextField;
 public class ResetButtonForTextFieldConnector extends
         AbstractExtensionConnector implements KeyUpHandler, AttachEvent.Handler {
 
-    public static final String CLASSNAME = "resetbuttonfortextfield";
-    private VTextField textField;
+
+	public static final String CLASSNAME = "resetbuttonfortextfield";
+	private static final long serialVersionUID = 1L;
+	private VTextField textField;
     private Element resetButtonElement;
 
     @Override

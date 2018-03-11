@@ -6,7 +6,9 @@ import javax.validation.constraints.NotNull;
 
 public class Category implements Serializable {
 
-    @NotNull
+	private static final long serialVersionUID = 1L;
+	
+	@NotNull
     private int id;
     @NotNull
     private String name;

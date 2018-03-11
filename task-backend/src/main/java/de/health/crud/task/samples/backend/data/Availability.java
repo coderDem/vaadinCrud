@@ -1,7 +1,9 @@
 package de.health.crud.task.samples.backend.data;
 
 public enum Availability {
-    COMING("Coming"), AVAILABLE("Available"), DISCONTINUED("Discontinued");
+    COMING("Coming"), 
+    AVAILABLE("Available"), 
+    DISCONTINUED("Discontinued");
 
     private final String name;
 
